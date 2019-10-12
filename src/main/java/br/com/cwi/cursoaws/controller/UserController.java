@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController("/user")
+@RestController
 public class UserController {
 
     @Autowired
     private UserService userService;
 
-    @GetMapping
+    @GetMapping("/user")
     public ResponseEntity<List<User>> getAll() {
         return ResponseEntity.ok(userService.findAll());
     }
